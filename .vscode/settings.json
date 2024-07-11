@@ -21,5 +21,9 @@
     "titleBar.inactiveBackground": "#2984c399",
     "titleBar.inactiveForeground": "#e7e7e799"
   },
-  "peacock.color": "#2984c3"
+  "peacock.color": "#2984c3",
+  "cSpell.words": [
+    "catppuccin",
+    "tailwindcss"
+  ]
 }

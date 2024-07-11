@@ -1,5 +1,5 @@
 import './global.css';
-import { RootProvider } from 'fumadocs-ui/provider';
+import { RootProvider } from 'components/fumadocs-ui/dist/provider';
 import { Inter } from 'next/font/google';
 import type { ReactNode } from 'react';
 
@@ -9,7 +9,7 @@ const inter = Inter({
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={inter.className} suppressHydrationWarning>
+    <html lang='en' className={inter.className} suppressHydrationWarning>
       <body>
         <RootProvider>{children}</RootProvider>
       </body>
