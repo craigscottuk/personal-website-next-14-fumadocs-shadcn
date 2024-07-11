@@ -1,4 +1,4 @@
-import { getPage, getPages } from '@/app/source';
+import { getQuizPage, getQuizPages } from '@/app/source';
 import type { Metadata } from 'next';
 import { DocsPage, DocsBody } from 'components/fumadocs-ui/dist/page';
 import { notFound } from 'next/navigation';
@@ -8,7 +8,7 @@ export default async function Page({
 }: {
   params: { slug?: string[] };
 }) {
-  const page = getPage(params.slug);
+  const page = getQuizPage(params.slug);
 
   if (page == null) {
     notFound();
@@ -27,13 +27,13 @@ export default async function Page({
 }
 
 export async function generateStaticParams() {
-  return getPages().map((page) => ({
+  return getQuizPages().map((page) => ({
     slug: page.slugs,
   }));
 }
 
 export function generateMetadata({ params }: { params: { slug?: string[] } }) {
-  const page = getPage(params.slug);
+  const page = getQuizPage(params.slug);
 
   if (page == null) notFound();
 
