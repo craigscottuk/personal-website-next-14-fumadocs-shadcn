@@ -1,0 +1,11 @@
+{
+  "title": "Case Studies",
+  "defaultOpen": false,
+  "root": false,
+  "pages": [
+    "optimising-offer-creation",
+    "Improving-inventory-management",
+    "---Separator---",
+    "enhancing-data-analytics"
+  ]
+}
