@@ -1,10 +1,16 @@
-import { getCustomBikesPages, getQuizPages, getBlogPages } from '@/app/source';
+import {
+  // getCustomBikesPages,
+  // getQuizPages,
+  getBlogPages,
+  getProjectsPages,
+} from '@/app/source';
 import { createSearchAPI } from 'fumadocs-core/search/server';
 
 // Combine all pages from different sources
 const allPages = [
-  ...getCustomBikesPages(),
-  ...getQuizPages(),
+  // ...getCustomBikesPages(),
+  // ...getQuizPages(),
+  ...getProjectsPages(),
   ...getBlogPages(),
 ];
 const searchIndexes = allPages.map((page) => ({

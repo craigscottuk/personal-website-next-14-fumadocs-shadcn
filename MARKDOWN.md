@@ -28,3 +28,7 @@ archive-sheets
 "blog-post-one",
 "blog-post-two",
 "blog-post-three",
+
+"quiz-case-study-one",
+"quiz-case-study-two",
+"quiz-case-study-three",

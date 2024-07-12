@@ -1,0 +1,9 @@
+{
+  "title": "Case Studies",
+  "pages": [
+    "quiz-case-study-one",
+    "quiz-case-study-two",
+    "quiz-case-study-three"
+  ],
+  "defaultOpen": false
+}

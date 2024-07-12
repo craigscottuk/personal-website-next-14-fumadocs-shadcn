@@ -1,26 +1,27 @@
-import { getBlogPage, getBlogPages, blogPageTree } from '@/app/source';
+import {
+  getProjectsPage,
+  getProjectsPages,
+  projectsPageTree,
+} from '@/app/source';
 import type { Metadata } from 'next';
 import { DocsPage, DocsBody } from 'components/fumadocs-ui/dist/page';
 import { notFound } from 'next/navigation';
-
-import { usePathname } from 'next/navigation';
-import { useBreadcrumb } from 'fumadocs-core/breadcrumb';
-
-const pathname = usePathname();
-const items = useBreadcrumb(pathname, blogPageTree);
+import { log } from 'console';
 
 export default async function Page({
   params,
 }: {
   params: { slug?: string[] };
 }) {
-  const page = getBlogPage(params.slug);
+  const page = getProjectsPage(params.slug);
 
   if (page == null) {
     notFound();
   }
 
   const MDX = page.data.exports.default;
+
+  console.log(projectsPageTree);
 
   return (
     <DocsPage
@@ -38,13 +39,13 @@ export default async function Page({
 }
 
 export async function generateStaticParams() {
-  return getBlogPages().map((page) => ({
+  return getProjectsPages().map((page) => ({
     slug: page.slugs,
   }));
 }
 
 export function generateMetadata({ params }: { params: { slug?: string[] } }) {
-  const page = getBlogPage(params.slug);
+  const page = getProjectsPage(params.slug);
 
   if (page == null) notFound();
 

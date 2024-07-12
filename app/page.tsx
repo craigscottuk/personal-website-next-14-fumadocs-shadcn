@@ -7,10 +7,11 @@ import {
 } from '@/components/ui/accordion';
 
 import { Layout } from 'components/fumadocs-ui/dist/layout';
+import { baseOptions } from './layout.config';
 
 export default function HomePage() {
   return (
-    <Layout>
+    <Layout {...baseOptions}>
       <main className='flex h-screen flex-col justify-center text-center'>
         <h1 className='mb-4 text-2xl font-bold'>Hello World</h1>
         <p className='text-muted-foreground'>

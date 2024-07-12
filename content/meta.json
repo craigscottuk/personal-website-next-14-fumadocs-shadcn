@@ -1,5 +1,4 @@
 {
   "title": "Content",
-  "defaultOpen": false,
-  "root": true
+  "pages": ["index", "[Vercel](https://vercel.com)"]
 }
