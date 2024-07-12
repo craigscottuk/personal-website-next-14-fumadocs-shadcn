@@ -1,0 +1,15 @@
+{
+  "title": "OMS Component",
+  "defaultOpen": false,
+  "pages": [
+    "offers",
+    "live-projects",
+    "stage-painting-parts",
+    "stage-assembly-testing",
+    "stage-dispatch-pick-up",
+    "completed-projects",
+    "focused-projects",
+    "other-key-oms-components",
+    "archive-sheets"
+  ]
+}
