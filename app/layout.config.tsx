@@ -6,6 +6,7 @@ import { projectsPageTree, blogPageTree } from '@/app/source';
 import { RootToggle } from 'components/fumadocs-ui/dist/components/layout/root-toggle.js';
 import { cn } from 'lib/utils';
 import { Bebas_Neue } from 'next/font/google';
+import { Youtube } from 'lucide-react'; // Import YouTube icon
 
 const bebas = Bebas_Neue({
   subsets: ['latin'],
@@ -37,7 +38,7 @@ export const baseOptions: BaseLayoutProps = {
     },
     {
       text: 'Blog',
-      url: '/my-blog',
+      url: '/blog',
       active: 'nested-url',
     },
     {
@@ -51,11 +52,11 @@ export const baseOptions: BaseLayoutProps = {
       active: 'nested-url',
     },
     {
-      type: 'button',
-      text: 'CV',
-      url: '/my-cv',
-      active: 'nested-url',
-      on: 'nav',
+      type: 'secondary',
+      text: 'YouTube',
+      url: 'https://youtube.com',
+      icon: <Youtube />, // Use the YouTube icon component,
+      external: true,
     },
   ],
   githubUrl: 'https://github.com/craigscottuk/',
@@ -89,7 +90,7 @@ export const docLayoutOptions: DocsLayoutProps = {
     //       {
     //         title: 'Blog',
     //         description: 'My stories, insights, ideas and curated playlists',
-    //         url: '/projects/my-blog',
+    //         url: '/projects/blog',
     //         icon: <QuizIcon />, // Add an appropriate icon
     //       },
     //     ]}

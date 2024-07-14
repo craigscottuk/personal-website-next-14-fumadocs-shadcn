@@ -42,6 +42,6 @@ export const {
   pageTree: blogPageTree,
 } = loader({
   baseUrl: 'blog',
-  rootDir: 'my-blog',
+  rootDir: 'blog',
   source: createMDXSource(map),
 });
