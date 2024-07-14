@@ -1,4 +1,4 @@
-import { getBlogPage, getBlogPages } from '@/app/source';
+import { getCustomBikesPage, getCustomBikesPages } from '@/app/source';
 import type { Metadata } from 'next';
 import { DocsPage, DocsBody } from 'components/fumadocs-ui/dist/page';
 import { notFound } from 'next/navigation';
@@ -8,7 +8,7 @@ export default async function Page({
 }: {
   params: { slug?: string[] };
 }) {
-  const page = getBlogPage(params.slug);
+  const page = getCustomBikesPage(params.slug);
 
   if (page == null) {
     notFound();
@@ -18,7 +18,7 @@ export default async function Page({
 
   return (
     <DocsPage
-      breadcrumb={{ full: false }}
+      breadcrumb={{ full: true }}
       toc={page.data.exports.toc}
       full={page.data.full}
       tableOfContentPopover={{ enabled: false }}
@@ -32,13 +32,13 @@ export default async function Page({
 }
 
 export async function generateStaticParams() {
-  return getBlogPages().map((page) => ({
+  return getCustomBikesPages().map((page) => ({
     slug: page.slugs,
   }));
 }
 
 export function generateMetadata({ params }: { params: { slug?: string[] } }) {
-  const page = getBlogPage(params.slug);
+  const page = getCustomBikesPage(params.slug);
 
   if (page == null) notFound();
 

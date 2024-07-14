@@ -4,25 +4,36 @@ import { loader, Source } from 'fumadocs-core/source';
 
 // Loader for Custom Bikes
 export const {
-  getPage: getCustomBikesPage,
-  getPages: getCustomBikesPages,
-  pageTree: CustomBikesPageTree,
+  getPage: getProjectsPage,
+  getPages: getProjectsPages,
+  pageTree: projectsPageTree,
 } = loader({
-  baseUrl: '/projects/custom-bikes-system',
-  rootDir: 'projects/custom-bikes',
+  baseUrl: '/projects',
+  rootDir: 'projects',
   source: createMDXSource(map),
 });
 
-// Loader for Quiz
-export const {
-  getPage: getQuizPage,
-  getPages: getQuizPages,
-  pageTree: projectQuizTree,
-} = loader({
-  baseUrl: '/projects/quiz-react-app',
-  rootDir: 'projects/quiz',
-  source: createMDXSource(map),
-});
+// // Loader for Custom Bikes
+// export const {
+//   getPage: getCustomBikesPage,
+//   getPages: getCustomBikesPages,
+//   pageTree: CustomBikesPageTree,
+// } = loader({
+//   baseUrl: '/projects/custom-bikes-system',
+//   rootDir: 'projects/custom-bikes',
+//   source: createMDXSource(map),
+// });
+
+// // Loader for Quiz
+// export const {
+//   getPage: getQuizPage,
+//   getPages: getQuizPages,
+//   pageTree: projectQuizTree,
+// } = loader({
+//   baseUrl: '/projects/quiz-react-app',
+//   rootDir: 'projects/quiz',
+//   source: createMDXSource(map),
+// });
 
 // Loader for Blog
 export const {
@@ -30,7 +41,7 @@ export const {
   getPages: getBlogPages,
   pageTree: blogPageTree,
 } = loader({
-  baseUrl: '/blog',
+  baseUrl: 'blog',
   rootDir: 'blog',
   source: createMDXSource(map),
 });

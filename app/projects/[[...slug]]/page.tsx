@@ -1,14 +1,19 @@
-import { getCustomBikesPage, getCustomBikesPages } from '@/app/source';
+import {
+  getProjectsPage,
+  getProjectsPages,
+  projectsPageTree,
+} from '@/app/source';
 import type { Metadata } from 'next';
 import { DocsPage, DocsBody } from 'components/fumadocs-ui/dist/page';
 import { notFound } from 'next/navigation';
+import { log } from 'console';
 
 export default async function Page({
   params,
 }: {
   params: { slug?: string[] };
 }) {
-  const page = getCustomBikesPage(params.slug);
+  const page = getProjectsPage(params.slug);
 
   if (page == null) {
     notFound();
@@ -16,8 +21,15 @@ export default async function Page({
 
   const MDX = page.data.exports.default;
 
+  console.log(projectsPageTree);
+
   return (
-    <DocsPage toc={page.data.exports.toc} full={page.data.full}>
+    <DocsPage
+      breadcrumb={{ full: true }}
+      toc={page.data.exports.toc}
+      full={page.data.full}
+      tableOfContentPopover={{ enabled: false }}
+    >
       <DocsBody>
         <h1>{page.data.title}</h1>
         <MDX />
@@ -27,13 +39,13 @@ export default async function Page({
 }
 
 export async function generateStaticParams() {
-  return getCustomBikesPages().map((page) => ({
+  return getProjectsPages().map((page) => ({
     slug: page.slugs,
   }));
 }
 
 export function generateMetadata({ params }: { params: { slug?: string[] } }) {
-  const page = getCustomBikesPage(params.slug);
+  const page = getProjectsPage(params.slug);
 
   if (page == null) notFound();
 
