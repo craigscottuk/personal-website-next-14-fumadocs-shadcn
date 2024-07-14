@@ -4,9 +4,8 @@ import {
   projectsPageTree,
 } from '@/app/source';
 import type { Metadata } from 'next';
-import { DocsPage, DocsBody } from 'components/fumadocs-ui/dist/page';
+import { DocsPage, DocsBody } from 'fumadocs-ui/page';
 import { notFound } from 'next/navigation';
-import { log } from 'console';
 
 export default async function Page({
   params,
@@ -18,14 +17,12 @@ export default async function Page({
   if (page == null) {
     notFound();
   }
-
+  // console.log(projectsPageTree);
   const MDX = page.data.exports.default;
-
-  console.log(projectsPageTree);
 
   return (
     <DocsPage
-      breadcrumb={{ full: true }}
+      breadcrumb={{ includeRoot: true }}
       toc={page.data.exports.toc}
       full={page.data.full}
       tableOfContentPopover={{ enabled: false }}

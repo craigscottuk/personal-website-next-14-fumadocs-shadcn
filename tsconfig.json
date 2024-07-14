@@ -2,7 +2,11 @@
   "compilerOptions": {
     "baseUrl": ".",
     "target": "ESNext",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -16,7 +20,18 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "@/*": ["./*"]
+      "@/*": [
+        "./*"
+      ],
+      "@fumadocs-ui/*": [
+        "node_modules/fumadocs-ui/dist"
+      ]
+      // "@fumadocs-ui/*": [
+      //   "components/fumadocs-ui_latest/*"
+      // ]
+      // "@fumadocs-ui/*": [
+      //   "components/fumadocs-ui/dist/*"
+      // ]
     },
     "plugins": [
       {
@@ -24,6 +39,22 @@
       }
     ]
   },
-  "include": ["video.d.ts", "next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/carousel-and-tab/carousel.jsx", "app/carousel-and-tab/page.jsx", "app/carousel-and-tab/page.mdx"],
-  "exclude": ["node_modules"]
+  "include": [
+    "video.d.ts",
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "app/carousel-and-tab/carousel.jsx",
+    "app/carousel-and-tab/page.jsx",
+    "app/carousel-and-tab/page.mdx"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "plugins": [
+    {
+      "name": "next"
+    }
+  ]
 }

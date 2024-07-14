@@ -1,13 +1,14 @@
-import { createPreset } from './components/fumadocs-ui/dist/tailwind-plugin';
+import { createPreset } from 'fumadocs-ui/tailwind-plugin';
 
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
-    './content/**/*.{md,mdx}',
-    './mdx-components.{ts,tsx}',
-    './components/fumadocs-ui/dist/**/*.js',
+    './content/**/*.mdx',
+    './mdx-components.tsx',
+    './node_modules/fumadocs-ui/dist/**/*.js',
+    // './node_modules/fumadocs-openapi/dist/**/*.js',
   ],
   presets: [createPreset()], // createPreset() will override global.css
 };

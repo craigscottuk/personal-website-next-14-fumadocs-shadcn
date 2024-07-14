@@ -1,9 +1,6 @@
-import {
-  type BaseLayoutProps,
-  type DocsLayoutProps,
-} from 'components/fumadocs-ui/dist/layout';
+import { type BaseLayoutProps, type DocsLayoutProps } from 'fumadocs-ui/layout';
 import { projectsPageTree, blogPageTree } from '@/app/source';
-import { RootToggle } from 'components/fumadocs-ui/dist/components/layout/root-toggle.js';
+import { RootToggle } from 'fumadocs-ui/components/layout/root-toggle.js';
 import { cn } from 'lib/utils';
 import { Bebas_Neue } from 'next/font/google';
 import { Youtube } from 'lucide-react'; // Import YouTube icon
@@ -113,11 +110,11 @@ export const blogOptions: DocsLayoutProps = {
 
 // Components for custom icons
 function Logo({ size }: { size: 'large' | 'small' }) {
-  const textSize = size === 'large' ? 'text-[1.8rem]' : 'text-[1.6rem]';
+  const textSize = size === 'large' ? 'text-[1.8rem]' : 'text-[1.8rem]';
   return (
-    <h1 className={cn('block pt-2 leading-none', textSize, bebas.className)}>
-      CRAIG SCOTT
-    </h1>
+    <h1
+      className={cn('block pt-2 leading-none', textSize, bebas.className)}
+    ></h1>
   );
 }
 

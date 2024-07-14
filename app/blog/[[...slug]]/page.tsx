@@ -1,6 +1,6 @@
-import { getBlogPage, getBlogPages } from '@/app/source';
+import { getBlogPage, getBlogPages, blogPageTree } from '@/app/source';
 import type { Metadata } from 'next';
-import { DocsPage, DocsBody } from 'components/fumadocs-ui/dist/page';
+import { DocsPage, DocsBody } from 'fumadocs-ui/page';
 import { notFound } from 'next/navigation';
 
 export default async function Page({
@@ -16,12 +16,14 @@ export default async function Page({
 
   const MDX = page.data.exports.default;
 
+  console.log(blogPageTree);
+
   return (
     <DocsPage
-      breadcrumb={{ full: false }}
+      breadcrumb={{ enabled: true, includeRoot: true }}
+      tableOfContentPopover={{ enabled: false }}
       toc={page.data.exports.toc}
       full={page.data.full}
-      tableOfContentPopover={{ enabled: false }}
     >
       <DocsBody>
         <h1>{page.data.title}</h1>
