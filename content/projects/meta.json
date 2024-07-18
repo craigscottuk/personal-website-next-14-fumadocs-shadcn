@@ -3,6 +3,7 @@
   "defaultOpen": false,
   "root": true,
   "pages": [
+    "index",
     "--- Coding ---",
     "custom-bikes-sheets-system",
     "quiz-react-app",

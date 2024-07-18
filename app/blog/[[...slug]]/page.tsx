@@ -20,7 +20,7 @@ export default async function Page({
 
   return (
     <DocsPage
-      breadcrumb={{ enabled: true, includeRoot: true }}
+      breadcrumb={{ enabled: true, full: true, includeRoot: true }}
       tableOfContentPopover={{ enabled: false }}
       toc={page.data.exports.toc}
       full={page.data.full}

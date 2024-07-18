@@ -1,6 +1,5 @@
 {
   "title": "Blog",
-  "pages": ["blog-post-one", "blog-post-two", "blog-post-three"],
-  "defaultOpen": false,
-  "root": true
+  "pages": ["index", "blog-post-one", "blog-post-two", "blog-post-three"],
+  "defaultOpen": false
 }
