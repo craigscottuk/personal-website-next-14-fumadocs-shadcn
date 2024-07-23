@@ -1,5 +1,0 @@
-{
-  "title": "Blog",
-  "pages": ["index", "blog-post-one", "blog-post-two", "blog-post-three"],
-  "defaultOpen": false
-}

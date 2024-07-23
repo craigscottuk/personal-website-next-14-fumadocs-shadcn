@@ -16,7 +16,7 @@ export default async function Page({
 
   const MDX = page.data.exports.default;
 
-  console.log(blogPageTree);
+  // console.log(blogPageTree);
 
   return (
     <DocsPage

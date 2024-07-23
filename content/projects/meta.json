@@ -1,14 +1,5 @@
 {
   "title": "Projects",
   "defaultOpen": false,
-  "root": true,
-  "pages": [
-    "index",
-    "--- Coding ---",
-    "custom-bikes-sheets-system",
-    "quiz-react-app",
-    "--- Photography ---",
-    "--- Links ---",
-    "[Vercel](https://vercel.com)"
-  ]
+  "pages": ["custom-bikes-sheets-system", "quiz-react-app"]
 }

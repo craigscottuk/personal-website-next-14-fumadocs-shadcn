@@ -17,12 +17,12 @@ export default async function Page({
   if (page == null) {
     notFound();
   }
-  // console.log(projectsPageTree);
+  console.log(projectsPageTree);
   const MDX = page.data.exports.default;
 
   return (
     <DocsPage
-      breadcrumb={{ full: true, includeRoot: true }}
+      breadcrumb={{ enabled: true, full: true, includeRoot: true }}
       toc={page.data.exports.toc}
       full={page.data.full}
       tableOfContentPopover={{ enabled: false }}
