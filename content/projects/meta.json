@@ -1,5 +1,12 @@
 {
   "title": "Projects",
   "defaultOpen": false,
-  "pages": ["custom-bikes-sheets-system", "quiz-react-app"]
+  "pages": [
+    "index",
+    "---Coding---",
+    "custom-bikes-sheets-system",
+    "quiz-react-app",
+    "---Photography---",
+    "---Blog---"
+  ]
 }

@@ -17,7 +17,17 @@ export default async function Page({
   if (page == null) {
     notFound();
   }
-  console.log(projectsPageTree);
+
+  function logTree(node, indent = '') {
+    console.log(indent + node.name);
+
+    if (node.children) {
+      node.children.forEach((child) => logTree(child, indent + '  '));
+    }
+  }
+
+  logTree(projectsPageTree);
+
   const MDX = page.data.exports.default;
 
   return (
