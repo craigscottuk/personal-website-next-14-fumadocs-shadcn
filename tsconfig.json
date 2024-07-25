@@ -2,11 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "target": "ESNext",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -20,18 +16,8 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "@/*": [
-        "./*"
-      ],
-      "@fumadocs-ui/*": [
-        "node_modules/fumadocs-ui/dist"
-      ]
-      // "@fumadocs-ui/*": [
-      //   "components/fumadocs-ui_latest/*"
-      // ]
-      // "@fumadocs-ui/*": [
-      //   "components/fumadocs-ui/dist/*"
-      // ]
+      "@/*": ["./*"],
+      "@fumadocs-ui/*": ["./components/fumadocs-ui/*"],
     },
     "plugins": [
       {
@@ -49,12 +35,5 @@
     "app/carousel-and-tab/page.jsx",
     "app/carousel-and-tab/page.mdx"
   ],
-  "exclude": [
-    "node_modules"
-  ],
-  "plugins": [
-    {
-      "name": "next"
-    }
-  ]
+  "exclude": ["node_modules"]
 }

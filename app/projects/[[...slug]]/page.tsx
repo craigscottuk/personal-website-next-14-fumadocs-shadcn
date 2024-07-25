@@ -4,7 +4,7 @@ import {
   projectsPageTree,
 } from '@/app/source';
 import type { Metadata } from 'next';
-import { DocsPage, DocsBody } from 'fumadocs-ui/page';
+import { DocsPage, DocsBody } from '@fumadocs-ui/page';
 import { notFound } from 'next/navigation';
 
 export default async function Page({
@@ -30,12 +30,22 @@ export default async function Page({
 
   const MDX = page.data.exports.default;
 
+  // Determine if the current page or its parent is "Tech Docs"
+  const isTechDocsPage =
+    params.slug?.includes('technical-documentation') ||
+    params.slug?.[0] === 'tech-docs';
+
   return (
     <DocsPage
-      breadcrumb={{ enabled: true, full: true, includeRoot: true }}
+      breadcrumb={{
+        enabled: true,
+        full: true,
+        // includeRoot: true,
+        includeRoot: { url: '../projects' },
+      }}
       toc={page.data.exports.toc}
       full={page.data.full}
-      tableOfContentPopover={{ enabled: false }}
+      tableOfContentPopover={{ enabled: isTechDocsPage }}
     >
       <DocsBody>
         <h1>{page.data.title}</h1>

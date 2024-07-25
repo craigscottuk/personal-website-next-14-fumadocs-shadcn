@@ -1,6 +1,8 @@
-import { type BaseLayoutProps, type DocsLayoutProps } from 'fumadocs-ui/layout';
+import {
+  type BaseLayoutProps,
+  type DocsLayoutProps,
+} from '@fumadocs-ui/layout';
 import { projectsPageTree, blogPageTree } from '@/app/source';
-import { RootToggle } from 'fumadocs-ui/components/layout/root-toggle.js';
 import { cn } from 'lib/utils';
 import { Bebas_Neue } from 'next/font/google';
 import { Youtube } from 'lucide-react'; // Import YouTube icon

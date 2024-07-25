@@ -6,7 +6,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 
-import { Layout } from 'fumadocs-ui/layout';
+import { Layout } from '@fumadocs-ui/layout';
 import { baseOptions } from './layout.config';
 
 export default function HomePage() {

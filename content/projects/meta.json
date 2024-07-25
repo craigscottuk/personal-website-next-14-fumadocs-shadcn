@@ -1,6 +1,7 @@
 {
   "title": "Projects",
   "defaultOpen": false,
+  "root": true,
   "pages": [
     "index",
     "---Coding---",
