@@ -41,7 +41,7 @@ export default async function Page({
         enabled: true,
         full: true,
         // includeRoot: true,
-        includeRoot: { url: '../projects' },
+        includeRoot: { url: 'http://localhost:3000/projects' },
       }}
       toc={page.data.exports.toc}
       full={page.data.full}
