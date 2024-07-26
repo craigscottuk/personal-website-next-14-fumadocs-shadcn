@@ -26,7 +26,31 @@ export default async function Page({
     }
   }
 
-  logTree(projectsPageTree);
+  // logTree(projectsPageTree);
+
+  ///////
+  ///////
+  ///////
+  ///////
+
+  console.log('Page Data:', page.data);
+  console.log('Page Slugs:', page.slugs);
+  console.log('Page File:', page.file);
+  console.log('Page Exports:', page.data.exports);
+  console.log('Last Modified:', page.data.exports.lastModified);
+  console.log(
+    'Structured Data:',
+    JSON.stringify(page.data.exports.structuredData, null, 2)
+  );
+  console.log(
+    'Table of Contents:',
+    JSON.stringify(page.data.exports.toc, null, 2)
+  );
+
+  ///////
+  ///////
+  ///////
+  ///////
 
   const MDX = page.data.exports.default;
 
@@ -55,12 +79,6 @@ export default async function Page({
   );
 }
 
-export async function generateStaticParams() {
-  return getProjectsPages().map((page) => ({
-    slug: page.slugs,
-  }));
-}
-
 export function generateMetadata({ params }: { params: { slug?: string[] } }) {
   const page = getProjectsPage(params.slug);
 
@@ -70,4 +88,10 @@ export function generateMetadata({ params }: { params: { slug?: string[] } }) {
     title: page.data.title,
     description: page.data.description,
   } satisfies Metadata;
+}
+
+export async function generateStaticParams() {
+  return getProjectsPages().map((page) => ({
+    slug: page.slugs,
+  }));
 }
