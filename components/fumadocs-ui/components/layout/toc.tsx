@@ -31,17 +31,26 @@ export interface TOCProps {
    * Custom content in TOC container, after the main TOC
    */
   footer?: ReactNode;
+  className?: string; // Add className prop
 }
 
 export const TocProvider = Primitive.AnchorProvider;
 
-export function Toc({ items, header, footer }: TOCProps): ReactElement {
+export function Toc({
+  items,
+  header,
+  footer,
+  className = '',
+}: TOCProps): ReactElement {
   const { text } = useI18n();
 
   return (
     <div
       data-toc=''
-      className='sticky top-0 flex h-dvh w-[220px] shrink-0 flex-col gap-4 pr-3 pt-12 max-lg:hidden xl:w-[260px] rtl:pl-3'
+      className={cn(
+        'sticky top-0 flex h-dvh w-[220px] shrink-0 flex-col gap-4 pr-3 pt-12 md:pt-12 max-lg:hidden xl:w-[260px] rtl:pl-3',
+        className
+      )}
     >
       {header}
       <h3 className='-mb-1 -ms-0.5 inline-flex items-center gap-1.5 text-sm text-muted-foreground'>
@@ -54,7 +63,12 @@ export function Toc({ items, header, footer }: TOCProps): ReactElement {
   );
 }
 
-export function TocPopover({ items, header, footer }: TOCProps): ReactElement {
+export function TocPopover({
+  items,
+  header,
+  footer,
+  className = '',
+}: TOCProps): ReactElement {
   const { text } = useI18n();
   const active = Primitive.useActiveAnchor();
   const current = useMemo(() => {

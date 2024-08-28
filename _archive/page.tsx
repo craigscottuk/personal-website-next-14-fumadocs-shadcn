@@ -61,7 +61,7 @@ export default async function Page({
 
   // Determine if the layout is MergedLayout
   // const isMergedLayout = page.slugs?.includes('case-studies');
-  const isMergedLayout = false;
+  const isMergedLayout = true;
 
   return (
     <DocsPage

@@ -12,6 +12,8 @@ import {
   TocProvider,
   LastUpdate,
 } from './page.client';
+import { HomeLayout } from './home-layout';
+import { baseOptions } from '@/app/layout.config';
 
 // declare const {
 //   Toc,
@@ -64,6 +66,7 @@ export interface DocsPageProps {
   lastUpdate?: Date | string | number;
 
   children: ReactNode;
+  className?: string; // Add className prop
 }
 
 export function DocsPage({
@@ -74,6 +77,7 @@ export function DocsPage({
   lastUpdate,
   full = false,
   footer = {},
+  className = '', // Default empty string
   ...props
 }: DocsPageProps): React.ReactElement {
   const tocOptions = {
@@ -87,7 +91,7 @@ export function DocsPage({
       <div className='flex min-w-0 flex-1 flex-col'>
         <div
           className={cn(
-            'sticky top-14 z-10 border-b bg-background/60 text-sm font-medium backdrop-blur-md md:top-0 md:bg-card',
+            'sticky top-14 z-100 border-b bg-background/60 text-sm font-medium backdrop-blur-md md:top-0 md:bg-card',
             !full && 'lg:hidden'
           )}
         >
@@ -103,7 +107,8 @@ export function DocsPage({
         <article
           className={cn(
             'mx-auto flex w-full max-w-[840px] flex-1 flex-col gap-6 px-4 pt-10 md:px-6 md:pt-12',
-            !tocOptions.enabled && 'max-w-[1200px]'
+            !tocOptions.enabled && 'max-w-[1200px]',
+            className // Apply passed className
           )}
         >
           {replaceOrDefault(breadcrumb, <Breadcrumb {...breadcrumb} />)}
@@ -119,6 +124,7 @@ export function DocsPage({
           items={toc}
           header={tocOptions.header}
           footer={tocOptions.footer}
+          className={className} // Pass className to Toc
         />
       )}
     </TocProvider>
@@ -147,7 +153,7 @@ export function withArticle({
 }): React.ReactElement {
   return (
     <main className='container py-12'>
-      <article className='prose'>{children}</article>
+      <article className='prose'> {children}</article>
     </main>
   );
 }

@@ -124,9 +124,9 @@ export function Sidebar({
           )}
         >
           {props.banner}
-          {search.enabled ? (
+          {/* {search.enabled ? (
             <LargeSearchToggle className='rounded-lg max-md:hidden' />
-          ) : null}
+          ) : null} */}
         </div>
         <ViewportContent>
           {items.length > 0 && (

@@ -114,9 +114,9 @@ export const blogOptions: DocsLayoutProps = {
 function Logo({ size }: { size: 'large' | 'small' }) {
   const textSize = size === 'large' ? 'text-[1.8rem]' : 'text-[1.8rem]';
   return (
-    <h1
-      className={cn('block pt-2 leading-none', textSize, bebas.className)}
-    ></h1>
+    <h1 className={cn('block pt-2 leading-none', textSize, bebas.className)}>
+      Craig Scott
+    </h1>
   );
 }
 

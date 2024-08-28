@@ -6,12 +6,12 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 
-import { Layout } from '@fumadocs-ui/layout';
+import { HomeLayout } from '@fumadocs-ui/home-layout';
 import { baseOptions } from './layout.config';
 
 export default function HomePage() {
   return (
-    <Layout {...baseOptions}>
+    <HomeLayout {...baseOptions}>
       <main className='flex h-screen flex-col justify-center text-center'>
         <h1 className='mb-4 text-2xl font-bold'>Hello World</h1>
         <p className='text-muted-foreground'>
@@ -45,6 +45,6 @@ export default function HomePage() {
           </div>
         </div>
       </main>
-    </Layout>
+    </HomeLayout>
   );
 }

@@ -1,0 +1,144 @@
+---
+title: Live Projects
+description: This is a bit about the Live Projects
+---
+
+## `LIVE` Sheet
+
+The `LIVE` sheet is a comprehensive and dynamic tool that provides a real-time overview of all projects currently in production. It tracks the status and progress of each stage, customer care, and financial information. This sheet ensures that project owners have a clear and current view of all active projects, their stages, and any critical financial data.
+
+### Example Data Explanation:
+
+| Date Accepted | Deadline Date | Days Left | Priority | ▲     | `SYSTEM ID`    | `ID` | Surname / Project | First Name | Email                     | Telephone   | Owner | Config             | Status 1 | Status 2 | Status 3    | Num. Emails | Last Contacted | Days Ago | Contacted by | Satisfaction | Currency | VAT | Bike Price (Gross) | Bike Price (Net) (PLN) | Amount Paid (Gross) | Amount Remaining (Gross) | Amount Remaining (Net) (PLN) | CANCEL |
+| ------------- | ------------- | --------- | -------- | ----- | -------------- | ---- | ----------------- | ---------- | ------------------------- | ----------- | ----- | ------------------ | -------- | -------- | ----------- | ----------- | -------------- | -------- | ------------ | ------------ | -------- | --- | ------------------ | ---------------------- | ------------------- | ------------------------ | ---------------------------- | ------ |
+| 07/05/24      | 20/06/24      | -4        | 32%      | FALSE | `JONE-M-22080` | 0873 | Jones             | Michael    | michael.jones@example.com | 61790952701 | Marek | Shimano GRX (1x11) | 15/06/24 | 22/06/24 | NOT STARTED | 5           | 22/06/24       | 2        | Anna         | 😃           | PLN      | 23% | 7,299              | 5,934                  | 3,650               | 3,650                    | 2,967                        |        |
+
+### User Interface (UI) and Formatting
+
+**Headers and Colours**:
+
+- The headers are divided into sections, each with a distinct background colour for easy identification.
+  - **Accepted Order Overview and Payments**: Black background with white text.
+  - **Production Stages**: Colour-coded sections:
+    - **1. PAINTING & PARTS**: Blue background.
+    - **2. ASSEMBLY & TESTING**: Teal background.
+    - **3. DISPATCH / PICK-UP**: Orange background.
+  - **Customer Care**: Green background.
+  - **Payment Details**: Gray background.
+
+**Conditional Formatting**:
+
+- **Days Left**: Conditional formatting is applied to highlight delays (negative values) in red.
+- **Status Columns**: Colour-coded to reflect the current status of the project in each stage:
+  - **PAINTING & PARTS**:
+    - PAINT APPROVED ✓: Light blue
+    - NOT STARTED: Gray
+  - **ASSEMBLY & TESTING**:
+    - ASSEMBLED: Teal
+    - PROBLEM: Red
+  - **DISPATCH / PICK-UP**:
+    - NOT STARTED: Gray
+    - DISPATCHED: Yellow
+- **Customer Care**:
+  - Satisfaction levels indicated by emoji smilies, affecting the priority score.
+
+**Icons and Emojis**:
+
+- **Satisfaction**: Uses emojis to visually represent customer satisfaction, enhancing the clarity of this data point.
+- **Cancel Column**: Uses checkboxes to facilitate easy project cancellation.
+
+### Sample Data
+
+| Date Accepted | Deadline Date | Days Left | Priority | ▲     | `SYSTEM ID`    | `ID` | Surname / Project | First Name | Email                     | Telephone   | Owner | Config             | Status 1              | Status 2        | Status 3           | Num. Emails | Last Contacted | Days Ago | Contacted by | Satisfaction | Currency | VAT | Bike Price (Gross) | Bike Price (Net) (PLN) | Amount Paid (Gross) | Amount Remaining (Gross) | Amount Remaining (Net) (PLN) | CANCEL |
+| ------------- | ------------- | --------- | -------- | ----- | -------------- | ---- | ----------------- | ---------- | ------------------------- | ----------- | ----- | ------------------ | --------------------- | --------------- | ------------------ | ----------- | -------------- | -------- | ------------ | ------------ | -------- | --- | ------------------ | ---------------------- | ------------------- | ------------------------ | ---------------------------- | ------ |
+| 07/05/24      | 20/06/24      | -4        | 32%      | FALSE | `JONE-M-22080` | 0873 | Jones             | Michael    | michael.jones@example.com | 61790952701 | Marek | Shimano GRX (1x11) | 15/06/24 (Light Blue) | 22/06/24 (Teal) | NOT STARTED (Gray) | 5           | 22/06/24       | 2        | Anna         | 😃           | PLN      | 23% | 7,299              | 5,934                  | 3,650               | 3,650                    | 2,967                        |        |
+
+### Explanation:
+
+- **Date Accepted**: The date when the order was accepted (07/05/24).
+- **Deadline Date**: The deadline for the project (20/06/24).
+- **Days Left**: The number of days left until the deadline (-4 indicates the deadline has passed).
+- **Priority**: The priority percentage for the project (32%).
+- **▲**: A boolean value indicating a specific condition (FALSE).
+- **System ID**: Unique identifier for the system (`JONE-M-22080`).
+- **ID**: Project ID (0873).
+- **Surname / Project**: Customer's surname and project name (Jones).
+- **First Name**: Customer's first name (Michael).
+- **Email**: Customer's email address (michael.jones@example.com).
+- **Telephone**: Customer's telephone number (61790952701).
+- **Owner**: The person responsible for the project (Marek).
+- **Config**: Configuration details (Shimano GRX (1x11)).
+- **Status 1, 2, 3**: Status indicators for different stages of the project (dates (e.g. 15/06/24) (Light Blue), 22/06/24 (Teal), NOT STARTED (Gray)).
+- **Num. Emails**: Number of emails exchanged (5).
+- **Last Contacted**: Date when the customer was last contacted (22/06/24).
+- **Days Ago**: Number of days since the last contact (2).
+- **Contacted by**: The person who last contacted the customer (Anna).
+- **Satisfaction**: Customer satisfaction indicator (😃).
+- **Currency**: The currency used (PLN).
+- **VAT**: VAT percentage (23%).
+- \*\*Bike
+
+Price (Gross)\*\*: Total bike price including VAT (7,299).
+
+- **Bike Price (Net) (PLN)**: Net bike price in Polish Złotych (PLN) excluding VAT (5,934).
+- **Amount Paid (Gross)**: Total amount paid by the customer (3,650).
+- **Amount Remaining (Gross)**: Amount remaining to be paid (3,650).
+- **Amount Remaining (Net) (PLN)**: Net amount remaining in Polish Złotych (PLN) excluding VAT (2,967).
+- **CANCEL**: A dropdown with the value of "CANCEL" for triggering the cancellation script.
+
+### Key Features and Formulas:
+
+1. **Deadline and Essential Project Data**:
+
+   - **Data Import**: Essential project data, including the deadline, is imported from the `ORDER_DATA` sheet using VLOOKUP formulas.
+   - **Example Formula**:
+     ```plaintext
+     =IF($G5="",,VLOOKUP($G5,`ORDER_DATA`!$I:$O,MATCH(H$4,`ORDER_DATA`!$I$4:$O$4,0),0))
+     ```
+
+2. **Days Left**:
+
+   - **Functionality**: The Days Left column calculates the number of days remaining to complete the project. A negative number indicates the project is delayed.
+   - **Example Formula**:
+     ```plaintext
+     =IF(E5="",,DAYS(C5,TODAY()))
+     ```
+
+3. **Priority**:
+
+   - **Purpose**: The priority formula generates a score based on financial data, customer satisfaction, and deadline proximity, providing a comprehensive metric for project prioritisation.
+   - **Example Breakdown**:
+     ```plaintext
+     =IF(G5="", "", IF(X5="😡", 1, (40% * AF5/MAX($AF$5:$AF)) + (26% * AC5/MAX($AC$5:$AC)) + IFERROR(VLOOKUP(X5, { "😃", 1; "😐", 2; "😠", 3; "😡", 4 }, 2, FALSE), 1) * 8% + MAX(0, MIN(10% * (1 - (D5 / MAX($D$5:$D))), 10%))))
+     ```
+
+4. **Stage and Status Columns**:
+
+   - **Functionality**: The sheet uses colour-coded columns to indicate the stage of each project, correlating with different production stages (Painting and Parts, Assembly and Testing, Dispatch and Pick-Up).
+   - **Example Formula for Status**:
+     ```plaintext
+     =IF(VLOOKUP(G18, {'1. PAINTING & PARTS'!$F:$F, '1. PAINTING & PARTS'!$O:$O}, 2, FALSE) = "PAINT APPROVED ✓", IF(VLOOKUP(G18, {'1. PAINTING & PARTS'!$F:$F, '1. PAINTING & PARTS'!$Y:$Y}, 2, FALSE) = "", "NOT STARTED", VLOOKUP(G18, {'1. PAINTING & PARTS'!$F:$F, '1. PAINTING & PARTS'!$Y:$Y}, 2, FALSE)), IF(VLOOKUP(G18, {'1. PAINTING & PARTS'!$F:$F, '1. PAINTING & PARTS'!$O:$O}, 2, FALSE) = "", "NOT STARTED", VLOOKUP(G18, {'1. PAINTING & PARTS'!$F:$F, '1. PAINTING & PARTS'!$O:$O}, 2, FALSE)))
+     ```
+
+5. **Customer Care: Communication**:
+
+   - **Functionality**: This section tracks the number of emails sent to each customer, the last contact date, and who contacted them, ensuring consistent communication.
+   - **Data Source**: Data is imported from the `EMAILS` sheet and refreshed daily.
+
+6. **Customer Care: Satisfaction**:
+
+   - **Functionality**: A drop-down menu with emoji smilies indicates customer satisfaction levels. This impacts the priority formula, ensuring that dissatisfied customers receive higher priority.
+
+7. **Financials: Payment Details / Balance Tracking**:
+
+   - **Data Tracked**: Currency, VAT, bike price (gross and net), amount paid, and remaining balance are tracked. All data is dynamically imported from the `ORDER_DATA` sheet.
+   - **Purpose**: This section helps in tracking financial progress and ensuring internal consistency against costs.
+
+8. **Cancelling a Live Project**:
+   - **Functionality**: The Cancel column allows project owners to cancel a project. Selecting "Cancel" triggers a script that removes the project from production stages and updates the Offers Archive sheet.
+   - **Example Script**:
+     ```javascript
+     function cancelOrderFromOms(omsSpreadsheet, selectedRow, selectedCell) {
+       // ... (rest of the script)
+     }
+     ```
